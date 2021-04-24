@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 return [
     // The prefix for routes
@@ -102,16 +102,9 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // ExampleQuery::class,
-            ],
-            'mutation' => [
-                // ExampleMutation::class,
-            ],
-            'types' => [
-                // ExampleType::class,
-            ],
-            'middleware' => [],
-            'method' => ['get', 'post'],
+                'wine' => App\GraphQL\Queries\WineQuery::class,
+                'wines' => App\GraphQL\Queries\WinesQuery::class,
+            ]
         ],
     ],
 
@@ -125,9 +118,7 @@ return [
     // ]
     //
     'types' => [
-        // ExampleType::class,
-        // ExampleRelationType::class,
-        // \Rebing\GraphQL\Support\UploadType::class,
+        'Wine' => App\GraphQL\Types\WineType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
